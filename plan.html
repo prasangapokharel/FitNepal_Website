@@ -1,0 +1,86 @@
+<!-- plan.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Show Information Demo</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="bg1.png"></div>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="plan.html">Plan</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="content">
+        <h1>Show Information Demo</h1>
+
+    <button id="showInfoButton">Show Information</button>
+
+    <div id="infoContainer" style="display: none;">
+         <ul class="info">
+        <!-- Push Day -->
+        <li>
+            <strong>Push Day:</strong>
+            <ul>
+                <li><strong>Barbell Bench Press:</strong> 4 sets x 8-12 reps</li>
+                <li><strong>Overhead Press (Dumbbell or Barbell):</strong> 3 sets x 8-12 reps</li>
+                <li><strong>Incline Dumbbell Press:</strong> 3 sets x 10-15 reps</li>
+                <li><strong>Dumbbell Lateral Raises:</strong> 3 sets x 12-15 reps</li>
+                <li><strong>Tricep Dips or Tricep Pushdowns:</strong> 3 sets x 10-12 reps</li>
+                <li><strong>Push-ups:</strong> 3 sets to failure</li>
+            </ul>
+        </li>
+<br>
+<br>
+        <!-- Pull Day -->
+        <li>
+            <strong>Pull Day:</strong>
+            <ul>
+                <li><strong>Deadlifts:</strong> 4 sets x 6-8 reps</li>
+                <li><strong>Pull-ups or Lat Pulldowns:</strong> 3 sets x 8-12 reps</li>
+                <li><strong>Barbell Rows:</strong> 3 sets x 8-12 reps</li>
+                <li><strong>Face Pulls:</strong> 3 sets x 12-15 reps</li>
+                <li><strong>Dumbbell Bicep Curls:</strong> 3 sets x 10-12 reps</li>
+                <li><strong>Hammer Curls:</strong> 3 sets x 12-15 reps</li>
+            </ul>
+        </li>
+<br>
+<br>
+        <!-- Leg Day -->
+        <li>
+            <strong>Leg Day:</strong>
+            <ul>
+                <li><strong>Barbell Squats:</strong> 4 sets x 8-12 reps</li>
+                <li><strong>Deadlifts (Romanian or Sumo):</strong> 3 sets x 8-12 reps</li>
+                <li><strong>Leg Press:</strong> 3 sets x 10-15 reps</li>
+                <li><strong>Leg Curls:</strong> 3 sets x 12-15 reps</li>
+                <li><strong>Calf Raises:</strong> 4 sets x 15-20 reps</li>
+                <li><strong>Walking Lunges:</strong> 3 sets x 12 steps per leg</li>
+            </ul>
+        </li>
+    </ul>
+    </div>
+
+    <script>
+        document.getElementById('showInfoButton').addEventListener('click', function() {
+            var infoContainer = document.getElementById('infoContainer');
+            infoContainer.style.display = 'block';
+        });
+    </script>
+    </section>
+
+    
+
+</body>
+</html>
