@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Gym Shop</title>
+    <style>
+        
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            margin-top: 200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .buy-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart {
+            
+            
+            background-color: #F58426;
+            color: white;
+            height: 80px;
+            width: 80px;
+            top: 200px;
+
+
+
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: 50px;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff ;
+            z-index: 1;
+            color: #0000;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="logo"><img src="7.png"></div>
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="bmi.html">BMI</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="plan.html">Plan</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><button class="cart" onclick="openCart()">View Cart</button><li>
+                </ul>
+            </nav>
+        </header>
+    
+        <div class="container">
+            <div class="item" id="item1">
+                <img src="mbp.png" alt="Item 1">
+                <h2>Muscleblaze Creatine Monohydrate</h2>
+                <p>Description of Item 1.</p>
+                <p>$19.99</p>
+                <button class="buy-btn" onclick="addToCart('Item 1', 19.99)">Buy</button>
+            </div>
+    
+            <div class="item" id="item2">
+                <img src="bioz.png" alt="Item 2">
+                <h2>MuscleBlaze Biozyme Performance Whey, 850 g (1.87 lb), Triple Chocolate</h2>
+                <p></p>
+                <p>$29.99</p>
+                <button class="buy-btn" onclick="addToCart('Item 2', 29.99)">Buy</button>
+            </div>
+    
+            <!-- Add more items as needed -->
+        </div>
+    
+
+
+        <div id="cart-modal">
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <button onclick="closeCart()">Close</button>
+            <button onclick="processPayment()">Proceed to Payment</button>
+        </div>
+    </div>
+
+    <div id="payment-modal">
+        <h2>Payment Details</h2>
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" placeholder="Enter card number">
+
+        <label for="expiry-date">Expiry Date:</label>
+        <input type="text" id="expiry-date" placeholder="MM/YY">
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" placeholder="CVV">
+
+        <button onclick="completePurchase()">Complete Purchase</button>
+        <button onclick="closePayment()">Cancel</button>
+    </div>
+
+    <script>
+        /* ... (Previous JavaScript code remains unchanged) */
+        const cartItems = [];
+
+        function addToCart(itemName, itemPrice) {
+            cartItems.push({ name: itemName, price: itemPrice });
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartItemsList = document.getElementById('cart-items');
+            cartItemsList.innerHTML = '';
+
+            cartItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - $${item.price}`;
+                cartItemsList.appendChild(listItem);
+            });
+        }
+
+        function openCart() {
+            document.getElementById('cart-modal').style.display = 'block';
+        }
+
+        function closeCart() {
+            document.getElementById('cart-modal').style.display = 'none';
+        }
+        function processPayment() {
+            document.getElementById('cart-modal').style.display = 'none';
+            document.getElementById('payment-modal').style.display = 'block';
+        }
+
+        function closePayment() {
+            document.getElementById('payment-modal').style.display = 'none';
+        }
+
+        function completePurchase() {
+            // This is where you would typically send payment details to a server for processing
+            alert('Purchase completed successfully!');
+            closePayment();
+            clearCart();
+        }
+
+        function clearCart() {
+            cartItems.length = 0;
+            updateCartDisplay();
+        }
+    </script>
+    <div class="footer">
+        <p>&copy; 2023 Your Website. All rights reserved. | Designed by <a href="https://github.com/prasangapokharel" target="_blank">Prasanga Pokharel</a></p>
+    </div>
+</body>
+</html>

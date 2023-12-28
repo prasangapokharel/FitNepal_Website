@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Gym Shop</title>
+    
+    <style>
+    
+
+        .container {
+            max-width: 1200px;
+            margin: 10px auto;
+            margin-top: 150px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .buy-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart {
+            
+            top: 10px;
+            right: 10px;
+            background-color: #F58426;
+            color: white;
+            padding: 10px;
+            margin-right: 30px;
+            padding-left: 20px;
+            padding-right: 20px;
+
+            margin-left: 5px;
+            
+
+
+
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cart-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: 50px;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff ;
+            z-index: 1;
+            margin-left: 100px;
+            color: #0000;
+        }
+        .all{
+            
+            margin-top: 100px;
+            display: flex;
+            flex-wrap: wrap;
+             text-align: center;
+             margin-right: 20px;
+
+
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="7.png"></div>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bmi.html">BMI</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="plan.html">Plan</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button class="cart" onclick="openCart()">View Cart</button><li>
+            </ul>
+        </nav>
+    </header>
+<div class="all">
+    
+    <div class="container">
+        <div class="item" id="item1">
+            <img src="mbp.png" alt="Item 1">
+            <h2>Muscleblaze Creatine Monohydrate</h2>
+            <p>Description of Item 1.</p>
+            <p>$19.99</p>
+            <button class="buy-btn" onclick="addToCart('Item 1', 19.99)">Buy</button>
+        </div>
+        <div class="item" id="item1">
+            <img src="mbp.png" alt="Item 1">
+            <h2>Muscleblaze Creatine Monohydrate</h2>
+            <p>Description of Item 1.</p>
+            <p>$19.99</p>
+            <button class="buy-btn" onclick="addToCart('Item 1', 19.99)">Buy</button>
+        </div>
+        <div class="item" id="item1">
+            <img src="mbp.png" alt="Item 1">
+            <h2>Muscleblaze Creatine Monohydrate</h2>
+            <p>Description of Item 1.</p>
+            <p>$19.99</p>
+            <button class="buy-btn" onclick="addToCart('Item 1', 19.99)">Buy</button>
+        </div>
+        <div class="item" id="item1">
+            <img src="mbp.png" alt="Item 1">
+            <h2>Muscleblaze Creatine Monohydrate</h2>
+            <p>Description of Item 1.</p>
+            <p>$19.99</p>
+            <button class="buy-btn" onclick="addToCart('Item 1', 19.99)">Buy</button>
+        </div>
+        <div class="item" id="item1">
+            <img src="mbp.png" alt="Item 1">
+            <h2>Muscleblaze Creatine Monohydrate</h2>
+            <p>Description of Item 1.</p>
+            <p>$19.99</p>
+            <button class="buy-btn" onclick="addToCart('Item 1', 19.99)">Buy</button>
+        </div>
+        <div class="item" id="item1">
+            <img src="mbp.png" alt="Item 1">
+            <h2>Muscleblaze Creatine Monohydrate</h2>
+            <p>Description of Item 1.</p>
+            <p>$19.99</p>
+            <button class="buy-btn" onclick="addToCart('Item 1', 19.99)">Buy</button>
+        </div>
+        <div class="item" id="item1">
+            <img src="mbp.png" alt="Item 1">
+            <h2>Muscleblaze Creatine Monohydrate</h2>
+            <p>Description of Item 1.</p>
+            <p>$19.99</p>
+            <button class="buy-btn" onclick="addToCart('Item 1', 19.99)">Buy</button>
+        </div>
+        <div class="item" id="item1">
+            <img src="mbp.png" alt="Item 1">
+            <h2>Muscleblaze Creatine Monohydrate</h2>
+            <p>Description of Item 1.</p>
+            <p>$19.99</p>
+            <button class="buy-btn" onclick="addToCart('Item 1', 19.99)">Buy</button>
+        </div>
+
+        <div class="item" id="item2">
+            <img src="bioz.png" alt="Item 2">
+            <h2>MuscleBlaze Biozyme Performance Whey, 850 g (1.87 lb), Triple Chocolate</h2>
+            <p></p>
+            <p>$29.99</p>
+            <button class="buy-btn" onclick="addToCart('Item 2', 29.99)">Buy</button>
+        </div>
+
+        
+        <!-- Add more items as needed -->
+    </div>
+  
+</div>
+<div id="cart-modal">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <button onclick="closeCart()">Close</button>
+</div>
+  
+
+    <script>
+        const cartItems = [];
+
+        function addToCart(itemName, itemPrice) {
+            cartItems.push({ name: itemName, price: itemPrice });
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartItemsList = document.getElementById('cart-items');
+            cartItemsList.innerHTML = '';
+
+            cartItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${item.name} - $${item.price}`;
+                cartItemsList.appendChild(listItem);
+            });
+        }
+
+        function openCart() {
+            document.getElementById('cart-modal').style.display = 'block';
+        }
+
+        function closeCart() {
+            document.getElementById('cart-modal').style.display = 'none';
+        }
+    </script>
+    <div class="footer">
+        <p>&copy; 2023 Your Website. All rights reserved. | Designed by <a href="https://github.com/prasangapokharel" target="_blank">Prasanga Pokharel</a></p>
+    </div>
+</body>
+</html>

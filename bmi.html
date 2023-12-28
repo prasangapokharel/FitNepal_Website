@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+.bm{
+    font-family: 'Roboto', sans-serif;
+    margin-top: 200px;
+    border: 2px solid black;
+    border-radius: 40px;
+    
+    max-width: 700px;
+    margin-left: 30%;
+    display: flex;
+
+    
+}
+.bm.h2{
+    margin-top: 50px;
+}
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 100px;
+
+
+        }
+        .resu{
+
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button {margin-top: 20px;
+            background-color: #F58426;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        h2 {
+            color: #F58426;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="7.png"></div>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bmi.html">BMI</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="plan.html">Plan</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="bm">
+    <form id="bmiForm">
+        <img src="bmi.png">
+
+        <h2>BMI Calculator</h2>
+
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" required>
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" required>
+
+        <button type="button" onclick="calculateBMI()">Calculate BMI</button>
+        <script>
+            function calculateBMI() {
+                var weight = parseFloat(document.getElementById('weight').value);
+                var height = parseFloat(document.getElementById('height').value);
+    
+                if (isNaN(weight) || isNaN(height) || height <= 0 || weight <= 0) {
+                    alert("Please enter valid values for weight and height.");
+                    return;
+                }
+    
+                // Formula for BMI: weight (kg) / (height (m))^2
+                var bmi = weight / Math.pow(height / 100, 2);
+                var roundedBMI = bmi.toFixed(2);
+    
+                document.getElementById('result').innerHTML = "Your BMI: " + roundedBMI;
+            }
+        </script>
+    </form>
+    <h2 id="result"></h2>
+    
+</div>
+<div class="resu">
+   
+</div>
+<div class="footer">
+    <p>&copy; 2023 Your Website. All rights reserved. | Designed by <a href="https://github.com/prasangapokharel" target="_blank">Prasanga Pokharel</a></p>
+</div>
+</body>
+</html>
